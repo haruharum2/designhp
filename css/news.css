@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+/* common ハンバーガーメニュCSS */
+
+.go_top a{
+    display: block
+}
+
+.go_top {
+    position: absolute;
+    right: 5%;
+}
+
+.navItem {
+    display: flex;
+    gap: 48px;
+}
+
+/* animate アニメーション */
+
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .3s, transform .5s;
+  }
+  
+  .animate.slide-from-left {
+    transform: translateX(-180px);
+    animation-duration: 3s;
+  }
+  
+  .animate.slide-from-right {
+    transform: translateX(180px);
+  }
+  
+  .animate.appear {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .animate.delay {
+    transition-delay: .3s;
+  }
+  
+  .animate.delay-more {
+    transition-delay: .6s;
+  }
+  
+  .animate.delay-more2 {
+    transition-delay: .9s;
+  }
+
+  .animate.delay-more3 {
+    transition-delay: 1.2s;
+  }
+
+  .animate.delay-more4 {
+    transition-delay: 1.5s;
+  }
+  
+  .animate.delay-more5 {
+    transition-delay: 1.8s;
+  }
+
+  .animate.delay-more6 {
+    transition-delay: 2.1s;
+  }
+
+  .animate.delay-more7 {
+    transition-delay: 2.4s;
+  }
+  
+  .animate.slide-from-left.delay {
+    transition-delay: .3s;
+  }
+
+  .animate.slide-from-left.delay-more {
+    transition-delay: .6s;
+  }
+
+  .animate.slide-from-left.delay-more2 {
+    transition-delay: 1s;
+  }
+
+  .animate.slide-from-left.delay-more3 {
+    transition-delay: 1.8s;
+  }
+
+  .animate.slide-from-left.delay-more4 {
+    transition-delay: 2.1s;
+  }
+  
+  .animate.slide-from-right.delay {
+    transition-delay: .3s;
+  }
+
+
+/* header */
+.header_menu_pc ul li a {
+  display: block;
+  width: 100px;
+  color: #333;
+  text-shadow: 1px 1px #fff;
+}
+
+.header_wrapper .font1 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: normal;
+  color: #555;
+  text-shadow: 1px 1px #ccc;
+  }
+
+  .header_menu_pc li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 5%;
+  margin: 0 auto;
+  width: 70%;
+  height: 2px;
+  background:#666;
+  box-shadow: 1px 1px #ddd;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+
+  .toggle_btn span {
+    background: #555;
+}
+
+/* news */
+#news .inner {
+    margin-top: 96px;
+    background: rgba(214, 214, 214, 0.212);
+}
+
+#news .inner .font2 {
+  padding-top: 42px;
+  font-weight: bold;
+}
+
+.news_wrapper {
+  padding: 8px 0;  
+}
+
+.box {
+  background: #fff;
+  padding: 12px;
+}
+.box .font3 {
+  margin: 0;
+}
+
+#news .font2 {
+  margin: 48px auto 24px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 40%;
+  line-height: 1.2;
+   
+}
+
+#news .font2 small {
+  padding-top: 4px;
+  border-top: 1px solid #333;
+  font-weight: normal;
+  font-size: 12px;
+  }
+
+  #news .font3 {
+    color: #333;
+    font-size: 16px;
+  }
+
+  #news p {
+    padding-top: 12px;
+    line-height: 1.6;
+    font-size: 12px;
+  }
+
+  .news_slider li {
+    padding-bottom: 48px;
+  }
+
+  .news_slider  li img {
+    object-fit: cover;
+    height: 200px;
+  } 
+
+.news_wrapper:last-child {
+  padding-bottom: 48px;
+}
+
+
+/* slider スライダーCCS */
+
+.news_slider {
+    width:94%;
+     margin:0 auto;
+ }
+ 
+ .news_slider img {
+    width:100%;
+    height:auto;
+ }
+ 
+ .news_slider .slick-slide {
+    margin:0 10px;
+ }
+ 
+ .slick-prev, 
+ .slick-next {
+    position: absolute;
+    top: 32%;
+    cursor: pointer;
+    outline: none;
+    border-top: 2px solid #666;
+    border-right: 2px solid #666;
+    height: 15px;
+    width: 15px;
+ }
+ 
+ .slick-prev {
+    left: -1.5%;
+    transform: rotate(-135deg);
+ }
+ 
+ .slick-next {
+    right: -1.5%;
+    transform: rotate(45deg);
+ }
+ 
+ 
+ 
+ .slick-dots {
+    text-align:center;
+    margin: 0;
+ }
+ 
+ .slick-dots li {
+    display:inline-block;
+    margin:0 5px;
+ }
+ 
+ .slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;
+    height:8px;
+    display:block;
+    border-radius:20%;
+    background:#ccc;
+    border: none;
+ }
+ 
+ .slick-dots .slick-active button{
+    background:#333;
+ }
+
+
+ /* medium screen */
+
+ @media(min-width: 760px) {
+    #news .font2 {
+      padding-top: 42px;
+        font-size: 28px;
+    }
+
+    #news .inner .font2 small {
+        padding-top: 6px;
+    }
+ }
+
+ 

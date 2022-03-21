@@ -1,0 +1,726 @@
+@charset "utf-8";
+
+
+/* common */
+
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  border: .5px solid #888;
+  color: #333;
+  background: #fff;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+.btn a {
+  display: block;
+}
+
+
+/* animate アニメーション実装 */
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .3s, transform .5s;
+}
+
+.animate.slide-from-left {
+  transform: translateX(-180px);
+  animation-duration: 3s;
+}
+
+.animate.slide-from-right {
+  transform: translateX(180px);
+}
+
+.animate.appear {
+  opacity: 1;
+  transform: none;
+}
+
+.animate.delay {
+  transition-delay: .3s;
+}
+
+.animate.delay-more {
+  transition-delay: .6s;
+}
+
+.animate.delay-more2 {
+  transition-delay: .9s;
+}
+
+.animate.delay-more3 {
+  transition-delay: 1.2s;
+}
+
+.animate.delay-more4 {
+  transition-delay: 1.5s;
+}
+
+.animate.delay-more5 {
+  transition-delay: 1.8s;
+}
+
+.animate.delay-more5 {
+  transition-delay: 2.1s;
+}
+
+.animate.slide-from-left.delay {
+  transition-delay: .3s;
+}
+
+.animate.slide-from-left.delay-more {
+  transition-delay: .6s;
+}
+
+.animate.slide-from-left.delay-more2 {
+  transition-delay: .9s;
+}
+
+.animate.slide-from-left.delay-more3 {
+  transition-delay: 1.2s;
+}
+
+.animate.slide-from-left.delay-more4 {
+  transition-delay: 1.5s;
+}
+.animate.slide-from-left.delay-more5 {
+  transition-delay: 1.8s;
+}
+
+.animate.slide-from-right.delay {
+  transition-delay: .3s;
+}
+
+
+/* header */
+
+.header_all .inner.scrolled{
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+  padding: 8px 0 24px;
+}
+
+.header_logo .font1 {
+  color: #fff;
+}
+
+.header_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px;
+}
+
+.header_menu_pc ul {
+  display: flex; 
+  text-align: center;
+}
+
+.header_menu_pc ul li a {
+  display: block;
+  width: 100px;
+  color: #fff;
+  text-shadow: 1px 1px #333;
+}
+
+.header_all .inner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  margin: 0 auto;
+
+}
+
+.header_wrapper .font1 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: 1px 1px #333;
+}
+
+.header_wrapper .font1 small {
+  font-size: 12px;
+}
+
+.header_menu_pc {
+  display: none;
+}
+
+
+/* nav ハンバーガーメニュー */
+
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  background: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  
+}
+.open nav {
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+nav .inner {
+  padding: 25px;
+}
+
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav .inner ul li {
+  position: relative;
+  margin: 0;
+  width: 183px;
+  border-bottom: 1px solid #333;
+}
+
+nav .inner ul li a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1em;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+  background: #e4e4e4;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    left: -220px;
+    width: 220px;
+  }
+}
+
+
+
+/* toggle_btn */
+
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all .5s;
+  box-shadow: 2px 1px  rgba(119, 119, 119, 0.493);
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 4px;
+}
+
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+.open .toggle_btn span {
+  background-color: #fff;
+}
+
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+
+
+/* mask ハンバーガーメニュー */
+
+#mask {
+  display: none;
+  transition: all .5s;
+}
+
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+/* footer */
+
+.footer_sp_wrapper {
+  position: relative;
+  background-image: url(../img/82549514.png);
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+}
+
+.footer_desc {
+  position: absolute;
+  left: 25%;
+}
+
+.footer_sp .font2 {
+  color: #fff;
+  padding: 12px;
+  line-height: 1.6;
+  font-weight: normal;
+  text-shadow: 1px 1px #333;
+  text-align: center;
+}
+
+.footer_sp ul li {
+  padding: 10px 36px;
+  padding-top: 0;
+  font-size: 12px;
+  text-shadow: 1px 1px #333;
+}
+
+.footer_sp {
+  display: flex;
+}
+
+.footer_sp a {
+  color: #fff;
+  margin-left: 8px;
+  text-shadow: 1px 1px #333;
+}
+
+.footer_sp i {
+  font-size: 18px;
+}
+
+.footer_pic {
+  position: absolute;
+  top:42%;
+  right:30%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+} 
+
+.footer_pic ul li i {
+  font-size: 16px;
+}
+.footer_pic ul  {
+  margin-left: auto;
+ 
+}
+
+
+.footer_sp_wrapper p {
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  font-size: 12px;
+  color: #fff;
+}
+
+.footer_pc_wrapper {
+  position: relative;
+  background-image: url(../img/82549514.png);
+  background-size: cover;
+  width: 100%;
+  height: 150px;
+}
+
+.footer_desc_pc {
+  position: absolute;
+}
+
+.footer_pc .font2 {
+  color: #fff;
+  padding: 18px ;
+  line-height: 1.6;
+  font-weight: normal;
+  text-shadow: 1px 1px #333;
+}
+
+.footer_pc ul li {
+  padding: 10px 36px;
+  padding-top: 0;
+  font-size: 12px;
+  text-shadow: 1px 1px #333;
+}
+
+.footer_pc {
+  display: flex;
+}
+
+.footer_pc i {
+  font-size: 20px;
+}
+
+.footer_pc  a {
+  margin-left: 14px;
+  color: #fff;
+  text-shadow: 1px 1px #333;
+}
+
+.footer_desc_pc1 ul {
+  padding-top: 24px;
+  display: flex;
+}
+
+.footer_desc_pc2 ul {
+  padding-top: 12px;
+  display: flex;
+}
+
+.footer_desc_pc {
+  position: relative;
+}
+
+.footer_pic_pc_i {
+  position: absolute;
+  top:65%;
+  right: 10%;
+} 
+
+.footer_pic_pc ul li i {
+  font-size: 16px;
+}
+
+.footer_desc_pc p {
+  color: #fff;
+  text-shadow: 1px 1px #333;
+  padding: 0 18px;
+  font-size: 12px;
+}
+
+.footer_pc {
+  display: none;
+}
+
+.footer_desc_pc_wrapper {
+  position: absolute;
+  top: 40%;
+  right: 18%;
+}
+
+.footer_desc_pc1 li a{
+  position: relative;
+}
+  
+  .footer_desc_pc1 li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#fff;
+  box-shadow: 1px 1px #333;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+  
+  .footer_desc_pc1 li.current a::after,
+  .footer_desc_pc1 li a:hover::after {
+  transform: scale(1, 1);
+}
+
+.footer_desc_pc2 li a {
+  position: relative;
+}
+  
+.footer_desc_pc2 li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#fff;
+  box-shadow: 1px 1px #333;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+  
+.footer_desc_pc2 li.current a::after,
+.footer_desc_pc2 li a:hover::after {
+  transform: scale(1, 1);
+}
+
+.footer_desc li a{
+  position: relative;
+}
+    
+.footer_desc li.current a,
+.footer_desc li a:hover{
+  opacity: .8;
+}
+    
+.footer_desc li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#fff;
+  box-shadow: 1px 1px #333;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+    
+.footer_desc li.current a::after,
+.footer_desc li a:hover::after {
+  transform: scale(1, 1);
+  }
+
+.footer_pic a{
+  position: relative;
+}
+      
+.footer_pic a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#fff;
+  box-shadow: 1px 1px #333;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+      
+.footer_pic.current a::after,
+.footer_pic a:hover::after {
+  transform: scale(1, 1);
+}
+
+.footer_pic_pc_i a{
+  position: relative;
+}
+      
+   
+.footer_pic_pc_i a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#fff;
+  box-shadow: 1px 1px #333;
+  transition: all .3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  }
+      
+.footer_pic_pc_i.current a::after,
+.footer_pic_pc_i a:hover::after {
+  transform: scale(1, 1);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*== 下線が伸びて背景に変わる　*/
+
+.btn_action{
+  /*線の基点とするためrelativeを指定*/
+position:relative;
+  /*ボタンの形状*/  
+color:#333;
+  padding: 10px 30px;
+
+display:inline-block;
+  text-decoration: none;
+  outline: none;
+}
+
+/*テキストの設定*/
+.btn_action span{
+  /*テキストを前面に出すためz-indexの値を高く設定*/
+position:relative;
+z-index: 2;
+}
+
+.btn_action:hover span{
+color: #fff;
+}
+
+/*線の設定*/
+.btn_action::after {
+content:'';
+  /*絶対配置で線の位置を決める*/
+position:absolute;
+z-index:1;
+bottom:0;
+left:0;
+  /*線の形状*/
+background:#333;
+width:100%;
+height:.01px;
+  /*アニメーションの指定*/
+transition:all 0.3s ease-in-out;
+}
+
+/*線が伸びて背景に*/
+.btn_action:hover::after {
+  width: 100%;
+height:100%;
+}
+
+
+
+
+
+
+
+
+@media(min-width: 760px) {
+  nav {
+    display: none;
+  }
+
+  .header_all .inner.scrolled{
+   
+    padding: 5px 0 15px;
+  }
+
+  .header_logo .font1 {
+margin-bottom: 12px;
+  }
+
+  .header_menu_pc {
+    display: block;
+    z-index: 4;
+    
+  }
+
+ 
+
+  .header_menu_sp {
+    display: none;
+    
+    
+  }
+  .footer_sp {
+    display: none;
+  }
+
+  .footer_pc {
+    display: block;
+  }
+
+  /* header,footer:hover機能 */
+
+.header_menu_pc li a{
+  position: relative;
+  }
+  
+  .header_menu_pc li a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: 3%;
+      margin: 0 auto;
+      width: 70%;
+      height: 2px;
+      background:#666;
+      box-shadow: 1px 1px #ddd;
+      transition: all .3s;
+      transform: scale(0, 1);
+      transform-origin: center top;
+  }
+  
+  .header_menu_pc li.current a::after,
+  .header_menu_pc li a:hover::after {
+      transform: scale(1, 1);
+  }
+
+  
+  footer li a {
+    font-size: 14px;
+}
+
+
+}
+
+
